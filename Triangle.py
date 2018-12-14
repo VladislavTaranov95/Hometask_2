@@ -5,7 +5,7 @@ turtle.reset()
 turtle.speed(10000)
 
 
-def TriangleRec(pos_X, pos_Y, pos_X2, pos_Y2, pos_X3, pos_Y3, count):
+def triangleRec(pos_X, pos_Y, pos_X2, pos_Y2, pos_X3, pos_Y3, count):
     if count > 0:
         new_pos_X1 = (pos_X + pos_X2) // 2
 
@@ -31,11 +31,11 @@ def TriangleRec(pos_X, pos_Y, pos_X2, pos_Y2, pos_X3, pos_Y3, count):
 
         turtle.goto(new_pos_X3, new_pos_Y3)
 
-        TriangleRec(pos_X, pos_Y, new_pos_X1, new_pos_Y1, new_pos_X3, new_pos_Y3, count - 1)
+        triangleRec(pos_X, pos_Y, new_pos_X1, new_pos_Y1, new_pos_X3, new_pos_Y3, count - 1)
 
-        TriangleRec(pos_X2, pos_Y2, new_pos_X1, new_pos_Y1, new_pos_X2, new_pos_Y2, count - 1)
+        triangleRec(pos_X2, pos_Y2, new_pos_X1, new_pos_Y1, new_pos_X2, new_pos_Y2, count - 1)
 
-        TriangleRec(pos_X3, pos_Y3, new_pos_X3, new_pos_Y3, new_pos_X2, new_pos_Y2, count - 1)
+        triangleRec(pos_X3, pos_Y3, new_pos_X3, new_pos_Y3, new_pos_X2, new_pos_Y2, count - 1)
 
 
 pos_x = 20
@@ -66,6 +66,6 @@ turtle.goto(pos_x3, pos_y3)
 
 turtle.goto(pos_x, pos_y)
 
-TriangleRec(pos_x, pos_y, pos_x2, pos_y2, pos_x3, pos_y3, count);
+triangleRec(pos_x, pos_y, pos_x2, pos_y2, pos_x3, pos_y3, count);
 
 turtle.exitonclick()
